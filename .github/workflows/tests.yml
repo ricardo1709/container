@@ -1,0 +1,43 @@
+name: Tests
+
+on: [ push, pull_request ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [8.0, 7.4]
+
+    name: PHP ${{ matrix.php }}
+
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+
+    - name: Checkout the code
+      uses: actions/checkout@v2
+
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.composer/cache/files
+        key: dependencies-composer-${{ hashFiles('composer.json') }}
+
+    - name: Check lockfile
+      run: composer validate
+
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
+
+    - name: Sniff the code
+      run: vendor/bin/phpcs --standard=./ruleset.xml --extensions=php src tests
+
+    - name: Execute tests (Unit and Feature tests) via PHPUnit
+      run: vendor/bin/phpunit -v --colors=never --stderr
+
+    - name: Execute tests (Unit and Feature tests) via PHPStan
+      run: vendor/bin/phpstan analyse src tests -n --ansi --no-progress -l 8

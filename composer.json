@@ -1,0 +1,29 @@
+{
+    "name": "ricardo1709/container",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^0.12.99"
+    },
+    "authors": [
+        {
+            "name": "Ricardo van Bree",
+            "email": "ricardovbree@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4.0",
+        "psr/container": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ricardo1709\\Container\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ricardo1709\\Container\\Tests\\": "tests/"
+        }
+    }
+}
