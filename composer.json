@@ -1,6 +1,8 @@
 {
     "name": "ricardo1709/container",
+    "description": "",
     "type": "library",
+    "license": "MIT",
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "phpstan/phpstan": "^0.12.99"
