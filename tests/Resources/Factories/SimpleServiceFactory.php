@@ -13,7 +13,7 @@ class SimpleServiceFactory implements ContainerFactoryContract
 	 *
 	 * @return object
 	 */
-	public function create()
+	public function create(): object
 	{
 		return new SimpleService;
 	}
