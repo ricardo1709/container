@@ -27,7 +27,7 @@ class Container implements ContainerContract
      *
      * @return mixed Entry.
      */
-    public function get(string $id): mixed
+    public function get(string $id) // phpcs:ignore
     {
         if (!$this->has($id)) {
             throw new NotFoundException("The service \"$id\" not found.");
