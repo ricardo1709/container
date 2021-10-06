@@ -3,7 +3,6 @@
     "description": "",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "phpstan/phpstan": "^0.12.99",
