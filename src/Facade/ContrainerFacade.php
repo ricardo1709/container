@@ -49,7 +49,7 @@ class ContainerFacade
      *
      * @return boolean
      */
-    public function has(string $id): bool
+    public static function has(string $id): bool
     {
         return self::$current->has($id);
     }
@@ -61,7 +61,7 @@ class ContainerFacade
      * @param  object $object The entry.
      * @return ContainerContract
      */
-    public function set(string $id, $object): ContainerContract
+    public static function set(string $id, $object): ContainerContract
     {
         return self::$current->set($id, $object);
     }
@@ -74,7 +74,7 @@ class ContainerFacade
      * @param  object|callable|\Closure $object The entry or callback to create the entry.
      * @return ContainerContract
      */
-    public function register(string $id, $object): ContainerContract
+    public static function register(string $id, $object): ContainerContract
     {
         return self::$current->register($id, $object);
     }
@@ -86,7 +86,7 @@ class ContainerFacade
      * @param  ContainerFactoryContract $factory The factory for the entry.
      * @return ContainerContract
      */
-    public function registerFactory(string $id, ContainerFactoryContract $factory): ContainerContract
+    public static function registerFactory(string $id, ContainerFactoryContract $factory): ContainerContract
     {
         return self::$current->registerFactory($id, $factory);
     }
