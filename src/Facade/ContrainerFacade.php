@@ -6,25 +6,31 @@ namespace Ricardo1709\Container\Facade;
 use Ricardo1709\Container\Container;
 use Ricardo1709\Container\Contracts\ContainerContract;
 use Ricardo1709\Container\Contracts\ContainerFactoryContract;
+use Ricardo1709\Container\Exceptions\NotFoundException;
 
 class ContainerFacade
 {
-	protected static ContainerContract $current = new Container;
+    /**
+     * The current container.
+     *
+     * @var ContainerContract The current container.
+     */
+    protected static ContainerContract $current = new Container;
 
-	/**
-	 * Swaps the facade.
-	 *
-	 * @param  ContainerContract $swap The new container.
-	 * @return ContainerContract The old container.
-	 */
-	public static function swap(ContainerContract $swap): ContainerContract
-	{
-		$old = self::$current;
-		self::$current = $swap;
-		return $old;
-	}
+    /**
+     * Swaps the facade.
+     *
+     * @param  ContainerContract $swap The new container.
+     * @return ContainerContract The old container.
+     */
+    public static function swap(ContainerContract $swap): ContainerContract
+    {
+        $old = self::$current;
+        self::$current = $swap;
+        return $old;
+    }
 
-	/**
+    /**
      * Finds an entry of the container by its identifier and returns it.
      *
      * @param  string $id Identifier of the entry to look for.
