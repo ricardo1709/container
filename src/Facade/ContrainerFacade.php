@@ -6,7 +6,6 @@ namespace Ricardo1709\Container\Facade;
 use Ricardo1709\Container\Container;
 use Ricardo1709\Container\Contracts\ContainerContract;
 use Ricardo1709\Container\Contracts\ContainerFactoryContract;
-use Ricardo1709\Container\Exceptions\NotFoundException;
 
 class ContainerFacade
 {
@@ -34,8 +33,6 @@ class ContainerFacade
      * Finds an entry of the container by its identifier and returns it.
      *
      * @param  string $id Identifier of the entry to look for.
-     *
-     * @throws NotFoundException  No entry was found for **this** identifier.
      *
      * @return mixed Entry.
      */
