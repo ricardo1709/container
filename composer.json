@@ -1,6 +1,7 @@
 {
     "name": "ricardo1709/container",
     "description": "",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "require-dev": {
