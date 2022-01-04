@@ -1,7 +1,6 @@
 {
     "name": "ricardo1709/container",
     "description": "",
-    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "require-dev": {
@@ -29,6 +28,11 @@
     "autoload-dev": {
         "psr-4": {
             "Ricardo1709\\Container\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }
